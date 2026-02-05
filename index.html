@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="logo-section">
+        <div class="logo-p">
+        <p><img src="./img/logo.png" alt="logo">Moukye</p>
+        </div>
+    </header>
+    <section id="sign-up">
+        <div class="top">
+            <h1>Want to become as cool as a monkey ? </h1>
+        </div>
+
+        
+        <div id="display">
+        <div class="middle">
+            <div class="middle-upper">
+            <h2>Join the tribe!</h2>
+            <p>Already have an account? <a href="">Sign in</a>.</p>
+            </div>
+            <form id="signup-form">
+                <div>
+                <label for="username">Username: *</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" minlength="3" required>
+                <span id="empty-username" class="error-message"></span> 
+                </div>
+
+                <div>
+                <label for="user_email">Email: *</label>
+                <input type="email" name="email" id="user_email" placeholder="Enter your email" required>
+                <span id="empty-mail" class="error-message"></span>
+                </div>
+
+
+                <div>
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" name="phone_number" pattern="[0-9]{10}" id="phone_number" placeholder="Enter your phone number">
+                </div>
+
+                <div>
+                <label for="user_password">Password: *</label>
+                <input type="password" name="password" id="user_password" placeholder="Enter your password" minlength="8" required>
+                <span id="wrong-password" class="error-message"></span>
+                </div>
+
+                <div>
+                <label for="user_confirm_password"> Confirm Password: *</label>
+                <input type="password" name="confirm_password" id="user_confirm_password" placeholder="Repeat your password" required>
+                <span id="match-password" class="error-message"></span>
+                </div>
+            </form>
+        </div>
+        <div class="bottom">
+            <button type="submit" form="signup-form" class="create-account">Create Account</button>
+
+        </div>
+        </div>
+        
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
