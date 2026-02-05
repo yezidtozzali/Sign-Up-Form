@@ -29,7 +29,7 @@
             <h2>Join the tribe!</h2>
             <p>Already have an account? <a href="">Sign in</a>.</p>
             </div>
-            <form id="signup-form">
+            <form id="signup-form" novalidate>
                 <div>
                 <label for="username">Username: *</label>
                 <input type="text" id="username" name="username" placeholder="Enter your username" minlength="3" required>
@@ -39,7 +39,7 @@
                 <div>
                 <label for="user_email">Email: *</label>
                 <input type="email" name="email" id="user_email" placeholder="Enter your email" required>
-                <span id="empty-mail" class="error-message"></span>
+                <span id="empty-email" class="error-message"></span>
                 </div>
 
 
