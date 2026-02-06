@@ -1,46 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Luckiest+Guy&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-html {
-    height: 100%;
-}
-
-html, body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: fixed;
+    overflow: hidden;
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    position: relative;
-    flex-direction: column;
-    overflow-x: hidden;
-}
-
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    margin: 0;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     width: 100%;
     height: 100%;
-    background-image: url("./img/background1.PNG");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    background: url("./img/background1.PNG") center center / cover no-repeat fixed;
 }
 
-header {
+header .logo-p{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0;
     padding: 4px 16px 0px 16px;
     width: 100%;
@@ -68,7 +61,7 @@ header {
     align-items: center;
     justify-content: center;
     width: auto;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 #sign-up {
@@ -113,7 +106,7 @@ header {
     padding: 0px;
     color: rgb(255, 255, 255);
     margin-bottom: 50px;
-    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    text-shadow: 2px 2px 8px rgb(0, 0, 0, 0.7);
 }
 
 .middle {
@@ -232,6 +225,7 @@ h2 {
     cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
     .logo-p img {
         width: 64px;
@@ -259,29 +253,33 @@ h2 {
     }
 }
 
-@media (max-width: 430px) {
+
+@media (max-width: 480px) {
 
     body {
         min-height: 100vh;
-        min-height: -webkit-fill-available;
+        min-height: 100dvh;
     }
     
 
-    header {
+    header .logo-p {
         justify-content: center !important;
         padding: 10px 16px 5px 16px;
+        margin-left: 35px;
     }
 
 
     .logo-p img {
         width: 55px;
         height: 55px;
+        opacity: 1;
     }
 
     .logo-section p {
         font-size: 28px;
+        display: none;
+        
     }
-    
 
     .top {
         padding: 10px 0;
@@ -328,6 +326,7 @@ h2 {
         width: 100%;
     }
     
+
     input {
         width: 100%;
         max-width: 260px;
@@ -344,6 +343,7 @@ h2 {
         width: 100%;
     }
     
+
     .create-account {
         width: 100%;
         max-width: 280px;
@@ -367,6 +367,7 @@ h2 {
     .logo-p img {
         width: 48px;
         height: 48px;
+        margin-left: -8px;
     }
     
     .logo-section p {
@@ -380,5 +381,11 @@ h2 {
     
     h2 {
         font-size: 20px;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll;
     }
 }
