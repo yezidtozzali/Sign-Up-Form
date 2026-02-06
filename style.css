@@ -1,28 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Luckiest+Guy&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+
+html {
+    height: 100%;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+body {
     display: flex;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     position: relative;
     flex-direction: column;
     overflow-x: hidden;
 }
 
+
 body::before {
     content: '';
     position: fixed;
-    top: -20px;
-    left: -20px;
-    width: calc(100% + 40px);
-    height: calc(100% + 40px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("./img/background1.PNG");
-    background-repeat: repeat;
-    background-size: 4000px;
-    filter: blur(6px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     z-index: -1;
-    transform: scale(1.1);
 }
 
 header {
@@ -42,7 +54,6 @@ header {
 .logo-p img {
     width: 80px;
     height: 80px;
-
 }
 
 .logo-section p {
@@ -57,10 +68,8 @@ header {
     align-items: center;
     justify-content: center;
     width: auto;
-
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
-
-
 
 #sign-up {
     display: flex;
@@ -78,7 +87,7 @@ header {
     backdrop-filter: blur(10px) saturate(180%);
     border-radius: 8px;
     border: 1px solid rgb(255, 255, 255);
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,9 +97,6 @@ header {
     width: 350px;
     box-shadow: 0 2px 4px rgb(134, 134, 134);
 }
-
-
-
 
 .top {
     height: auto;
@@ -103,13 +109,12 @@ header {
 .top h1 {
     font-family: "Bebas Neue", sans-serif;
     margin-top: 0;
-    font-size: 52px;
-    padding: 0px, ;
+    font-size: 3.25rem;
+    padding: 0px;
     color: rgb(255, 255, 255);
     margin-bottom: 50px;
-
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
 }
-
 
 .middle {
     display: flex;
@@ -117,7 +122,6 @@ header {
     justify-content: center;
     align-items: center;
     gap: 32px;
-
 }
 
 .middle p {
@@ -129,7 +133,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 input {
@@ -148,6 +151,7 @@ input:hover{
 input.error {
     border: solid 2px rgb(255, 0, 0) !important;
 }
+
 input:focus {
     outline: none;
 }
@@ -159,6 +163,7 @@ input.error:focus {
 input.valid:focus {
     border-color: rgb(114, 172, 60);
 }
+
 .error-message {
     color: rgb(255, 0, 0);
     font-size: 12px;
@@ -178,10 +183,7 @@ form div {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     box-sizing: border-box;
-
 }
-
-
 
 h2 {
     font-family: "Luckiest Guy", sans-serif;
@@ -191,7 +193,6 @@ h2 {
     width: 205px;
     margin-left: 10px;
     margin-top: 32px;
-
 }
 
 .middle-upper{
@@ -199,6 +200,7 @@ h2 {
     flex-direction: column;
     gap: 4px;
 }
+
 .middle p{
     color: gray;
     font-family: "Roboto", sans-serif;
@@ -228,4 +230,155 @@ h2 {
 .create-account:hover{
     background-color: rgb(36, 36, 36);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .logo-p img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .logo-section p {
+        font-size: 32px;
+    }
+    
+    .top h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        max-width: 90%;
+        padding: 0 10px;
+    }
+    
+    #sign-up {
+        padding: 20px 10px;
+    }
+    
+    #display {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 430px) {
+
+    body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+
+    header {
+        justify-content: center !important;
+        padding: 10px 16px 5px 16px;
+    }
+
+
+    .logo-p img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-section p {
+        font-size: 28px;
+    }
+    
+
+    .top {
+        padding: 10px 0;
+    }
+    
+    .top h1 {
+        font-size: 2rem;
+        text-align: center;
+        max-width: 95%;
+        padding: 0 15px;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+    
+
+    #sign-up {
+        padding: 15px 10px;
+        min-height: auto;
+    }
+    
+
+    #display {
+        width: 90%;
+        max-width: 320px;
+        overflow: visible;
+        margin: 10px auto;
+    }
+    
+    .middle {
+        gap: 20px;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    h2 {
+        font-size: 22px;
+        margin-top: 20px;
+        width: auto;
+        margin-left: 0;
+    }
+    
+    .middle-upper {
+        width: 100%;
+    }
+    
+    input {
+        width: 100%;
+        max-width: 260px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    form {
+        width: 100%;
+    }
+    
+    form div {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    
+    .create-account {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        height: 40px;
+    }
+    
+    .bottom {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 375px) {
+    .top h1 {
+        font-size: 1.75rem;
+    }
+    
+    .logo-p img {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .logo-section p {
+        font-size: 24px;
+    }
+    
+    #display {
+        width: 92%;
+        max-width: 300px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
 }
