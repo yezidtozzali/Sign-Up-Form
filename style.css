@@ -1,34 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Luckiest+Guy&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 body {
-  margin: 0;
-  padding:
-    env(safe-area-inset-top)
-    env(safe-area-inset-right)
-    env(safe-area-inset-bottom)
-    env(safe-area-inset-left);
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-image: url("./img/background1.PNG");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+    display: flex;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-image: url("./img/background1.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
 }
 
 header .logo-p{
@@ -70,7 +77,7 @@ header .logo-p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: calc(100dvh - 120px);
+    min-height: calc(100vh - 120px);
     margin: 0;
     padding: 0;
 }
@@ -227,59 +234,25 @@ h2 {
 }
 
 
-@media (max-width: 768px) {
-    .logo-p img {
-        width: 64px;
-        height: 64px;
-    }
-
-    .logo-section p {
-        font-size: 32px;
-    }
-    
-    .top h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        max-width: 90%;
-        padding: 0 10px;
-    }
-    
-    #sign-up {
-        padding: 20px 10px;
-    }
-    
-    #display {
-        width: 90%;
-        max-width: 350px;
-    }
-}
-
-
-@media (max-width: 480px) {
-    
-
+@media (max-width: 485px) {
     header .logo-p {
         justify-content: center !important;
         padding: 10px 16px 5px 16px;
     }
 
-
     .logo-p img {
         width: 55px;
         height: 55px;
-        opacity: 1;
     }
 
     .logo-section p {
-        font-size: 28px;
         display: none;
-        
     }
 
     .top {
         padding: 10px 0;
     }
-    
+
     .top h1 {
         font-size: 2rem;
         text-align: center;
@@ -288,13 +261,11 @@ h2 {
         margin-bottom: 25px;
         line-height: 1.2;
     }
-    
 
     #sign-up {
         padding: 15px 10px;
-        min-height: calc(100svh - 120px);
+        min-height: auto;
     }
-    
 
     #display {
         width: 90%;
@@ -302,25 +273,24 @@ h2 {
         overflow: visible;
         margin: 10px auto;
     }
-    
+
     .middle {
         gap: 20px;
         width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
     }
-    
+
     h2 {
         font-size: 22px;
         margin-top: 20px;
         width: auto;
         margin-left: 0;
     }
-    
+
     .middle-upper {
         width: 100%;
     }
-    
 
     input {
         width: 100%;
@@ -328,16 +298,15 @@ h2 {
         font-size: 16px;
         box-sizing: border-box;
     }
-    
+
     form {
         width: 100%;
     }
-    
+
     form div {
         margin-bottom: 20px;
         width: 100%;
     }
-    
 
     .create-account {
         width: 100%;
@@ -346,7 +315,7 @@ h2 {
         font-size: 16px;
         height: 40px;
     }
-    
+
     .bottom {
         width: 100%;
         padding: 0 15px;
@@ -354,33 +323,27 @@ h2 {
     }
 }
 
+
 @media (max-width: 375px) {
     .top h1 {
         font-size: 1.75rem;
     }
-    
+
     .logo-p img {
         width: 48px;
         height: 48px;
     }
-    
+
     .logo-section p {
         font-size: 24px;
     }
-    
+
     #display {
         width: 92%;
         max-width: 300px;
     }
-    
+
     h2 {
         font-size: 20px;
-    }
-}
-
-@supports (-webkit-touch-callout: none) {
-    body {
-        background-attachment: scroll;
-        min-height: 100svh;
     }
 }
