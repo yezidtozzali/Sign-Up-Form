@@ -256,16 +256,11 @@ h2 {
 
 
 @media (max-width: 480px) {
-
-    body {
-        min-height: 100svh;
-    }
     
 
     header .logo-p {
         justify-content: center !important;
         padding: 10px 16px 5px 16px;
-        margin-left: 35px;
     }
 
 
@@ -367,7 +362,6 @@ h2 {
     .logo-p img {
         width: 48px;
         height: 48px;
-        margin-left: -8px;
     }
     
     .logo-section p {
